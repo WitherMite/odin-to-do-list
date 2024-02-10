@@ -17,10 +17,10 @@ function createTask(name, desc, priority = 4, dueDateRaw) {
     get priority() {
       return _pri;
     },
-    changeDueDate(date) {
+    set dueDate(date) {
       _dueDate = checkDate(date);
     },
-    changePriority(num) {
+    set priority(num) {
       _pri = clampPriority(num);
     },
   };
