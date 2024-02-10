@@ -1,6 +1,6 @@
-import createTask from "./to-do-modules/to-do";
+import Task from "./to-do-modules/task.js";
 
-const task = createTask(
+const task = new Task(
   'test',
   "this is a test",
   4,
@@ -13,7 +13,7 @@ task.dueDate = "2025-04-25";
 console.log(task.dueDate);
 console.log(task.creationDate);
 
-const taskSimple = createTask("test2", 'this is another test');
+const taskSimple = new Task("test2", 'this is another test');
 console.log(taskSimple.priority);
 taskSimple.priority = 6;
 console.log(taskSimple.priority);
