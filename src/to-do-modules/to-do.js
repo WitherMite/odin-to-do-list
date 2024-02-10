@@ -1,19 +1,28 @@
 function createTask(name, desc, priority = 4, dueDateRaw) {
-  if (priority > 7) priority = 7;
-  if (priority < 1) priority = 1;
+  let _dueDate = checkDate(dueDateRaw);
+  let _pri = clampPriority(priority);
 
-  let dueDate = checkDate(dueDateRaw);
-  
-  function changeDueDate(date) {
-    this.dueDate = checkDate(date);
+  function clampPriority(num) {
+    if (num > 7) return 7;
+    if (num < 1) return 1;
+    return num;
   }
 
   return {
     name,
     desc,
-    priority,
-    dueDate,
-    changeDueDate
+    get dueDate() {
+      return _dueDate
+    },
+    get priority() {
+      return _pri;
+    },
+    changeDueDate(date) {
+      _dueDate = checkDate(date);
+    },
+    changePriority(num) {
+      _pri = clampPriority(num);
+    },
   };
 }
 

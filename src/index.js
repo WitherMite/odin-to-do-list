@@ -8,7 +8,14 @@ const task = createTask(
 );
 
 console.table(task);
-
 task.changeDueDate("2025-04-25");
+console.log(task.dueDate);
 
-console.table(task);
+const taskSimple = createTask("test2", 'this is another test');
+console.table(taskSimple);
+taskSimple.changePriority(6);
+console.table(taskSimple.priority);
+taskSimple.changePriority(8);
+console.table(taskSimple.priority);
+taskSimple.changePriority(0);
+console.table(taskSimple.priority);
