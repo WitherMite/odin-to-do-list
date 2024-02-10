@@ -7,15 +7,17 @@ const task = createTask(
   "2024-02-14"
 );
 
-console.table(task);
-task.changeDueDate("2025-04-25");
 console.log(task.dueDate);
+console.log(task.creationDate);
+task.dueDate = "2025-04-25";
+console.log(task.dueDate);
+console.log(task.creationDate);
 
 const taskSimple = createTask("test2", 'this is another test');
-console.table(taskSimple);
-taskSimple.changePriority(6);
-console.table(taskSimple.priority);
-taskSimple.changePriority(8);
-console.table(taskSimple.priority);
-taskSimple.changePriority(0);
-console.table(taskSimple.priority);
+console.log(taskSimple.priority);
+taskSimple.priority = 6;
+console.log(taskSimple.priority);
+taskSimple.priority = 8;
+console.log(taskSimple.priority);
+taskSimple.priority = 0;
+console.log(taskSimple.priority);

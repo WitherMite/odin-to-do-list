@@ -1,6 +1,7 @@
 function createTask(name, desc, priority = 4, dueDateRaw) {
   let _dueDate = checkDate(dueDateRaw);
   let _pri = clampPriority(priority);
+  let _created = new Date();
 
   function clampPriority(num) {
     if (num > 7) return 7;
@@ -11,6 +12,9 @@ function createTask(name, desc, priority = 4, dueDateRaw) {
   return {
     name,
     desc,
+    get creationDate() {
+      return _created;
+    },
     get dueDate() {
       return _dueDate
     },
