@@ -3,7 +3,7 @@ class Task {
   #priority;
   #dueDate;
   static from(JSON) {
-    // re-create task from saved JSON object
+    // re-create task from saved JSON object (by reassigning prototypes?)
   }
   constructor(name, desc, priority = 4, dueDateRaw) {
     this.#created = new Date();
