@@ -3,11 +3,7 @@ function createTask(name, desc, priority = 4, dueDateRaw) {
   if (priority < 1) priority = 1;
 
   let dueDate = checkDate(dueDateRaw);
-  function checkDate(rawDate) {
-    if (!rawDate) return null;
-    if (rawDate instanceof Date) return rawDate;
-    return new Date(rawDate);
-  }
+  
   function changeDueDate(date) {
     this.dueDate = checkDate(date);
   }
@@ -19,6 +15,12 @@ function createTask(name, desc, priority = 4, dueDateRaw) {
     dueDate,
     changeDueDate
   };
+}
+
+function checkDate(rawDate) {
+  if (!rawDate) return null;
+  if (rawDate instanceof Date) return rawDate;
+  return new Date(rawDate);
 }
 
 export default createTask;
