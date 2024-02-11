@@ -1,34 +1,31 @@
 class Task {
-  #created;
-  #priority;
-  #dueDate;
   static from(JSON) {
     // re-create task from saved JSON object (by reassigning prototypes?)
   }
   constructor(name, desc, priority = 4, dueDateRaw) {
-    this.#created = new Date();
-    this.#priority = clampPriority(priority);
-    this.#dueDate = checkDate(dueDateRaw);
+    this._created = new Date();
+    this._priority = clampPriority(priority);
+    this._dueDate = checkDate(dueDateRaw);
     this.name = name;
     this.description = desc;
   }
 
   get creationDate() {
-    return this.#created;
+    return this._created;
   }
 
   get dueDate() {
-    return this.#dueDate;
+    return this._dueDate;
   }
   set dueDate(date) {
-    this.#dueDate = checkDate(date);
+    this._dueDate = checkDate(date);
   }
 
   get priority() {
-    return this.#priority;
+    return this._priority;
   }
   set priority(num) {
-    this.#priority = clampPriority(num);
+    this._priority = clampPriority(num);
   }
 }
 
