@@ -3,7 +3,7 @@ import Task from "./task.js";
 class Project extends Task { // projects can be tasks - should be nestable
   static from(obj) {
     // re-create project from saved JSON object or task with a tasks prop
-    // _repairNested(fixedProject);
+    // fixedProject._repairNested();
   }
   constructor(name, desc, priority, dueDateRaw, ...tasks) {
     super(name, desc, priority = 4, dueDateRaw);

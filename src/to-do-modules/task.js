@@ -8,6 +8,7 @@ class Task {
     this._dueDate = checkDate(dueDateRaw);
     this.name = name;
     this.description = desc;
+    this.completed = false;
   }
 
   get creationDate() {
