@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: antiquewhite;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.toolbar > button {
+    margin-left: 2rem;
+}
+
+.task-board {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 1.5rem;
+}
+
+.task {
+    height: 250px;
+    background-color: antiquewhite;
+    border-radius: 1.5rem;
+}
