@@ -1,3 +1,4 @@
+require('./style.css');
 import Task from "./to-do-modules/task.js";
 import Project from './to-do-modules/project.js';
 

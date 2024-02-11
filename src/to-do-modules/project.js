@@ -1,4 +1,4 @@
-import Task from "task.js";
+import Task from "./task.js";
 
 class Project extends Task { // projects can be tasks - should be nestable
   constructor(name, desc, priority, dueDateRaw, ...tasks) {

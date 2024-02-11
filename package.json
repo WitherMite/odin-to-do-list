@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/WitherMite/odin-to-do-list#readme",
   "devDependencies": {
+    "css-loader": "^6.10.0",
     "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.4",
     "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4"
   }
