@@ -5,8 +5,8 @@ class Project extends Task { // projects can be tasks - should be nestable
     // re-create project from saved JSON object or task with a tasks prop
     // fixedProject._repairNested();
   }
-  constructor(name, desc, priority, dueDateRaw, ...tasks) {
-    super(name, desc, priority = 4, dueDateRaw);
+  constructor(name, desc, priority = 4, dueDateRaw, ...tasks) {
+    super(name, desc, priority, dueDateRaw);
     this.tasks = [ ...tasks];
   }
 
