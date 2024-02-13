@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Odin To-do List</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="toolbar">
@@ -12,13 +13,93 @@
     <button>option</button>
     <button>option</button>
   </nav>
+  <div class="sidebar">
+    <h2>Projects</h2>
+    <!-- placeholder tree -->
+    <ul>
+      <li>1</li>
+      <li>2
+        <ul>
+          <li>2.1</li>
+          <li>2.2</li>
+        </ul>
+      </li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
   <main>
     <div class="task-board">
       <!-- placeholder tasks -->
-      <div class="task"></div>
-      <div class="task"></div>
-      <div class="task"></div>
-      <div class="task"></div>
+      <div class="project priority7">
+        <div class="min-task-info">
+          <h1>Name</h1>
+          <h3>Due: date</h3>
+        </div>
+        <div class="collapsible open">
+          <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, fugiat alias error eius magni illum cum itaque repellat ex ipsa temporibus asperiores recusandae, odit harum quae saepe voluptatibus laboriosam repudiandae?</p>
+          <div class="project-tasks">
+            <h3>Tasks:</h3>
+            <div class="task priority1">
+              <div class="min-task-info">
+                <h1>Name</h1>
+                <h3>Due: date</h3>
+              </div>
+              <div class="collapsible">
+                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, fugiat alias error eius magni illum cum itaque repellat ex ipsa temporibus asperiores recusandae, odit harum quae saepe voluptatibus laboriosam repudiandae?</p>
+              </div>
+            </div>
+            <div class="task priority2">
+              <div class="min-task-info">
+                <h1>Name</h1>
+                <h3>Due: date</h3>
+              </div>
+              <div class="collapsible open">
+                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, fugiat alias error eius magni illum cum itaque repellat ex ipsa temporibus asperiores recusandae, odit harum quae saepe voluptatibus laboriosam repudiandae?</p>
+              </div>
+            </div>
+            <div class="task priority3">
+              <div class="min-task-info">
+                <h1>Name</h1>
+                <h3>Due: date</h3>
+              </div>
+              <div class="collapsible">
+                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, fugiat alias error eius magni illum cum itaque repellat ex ipsa temporibus asperiores recusandae, odit harum quae saepe voluptatibus laboriosam repudiandae?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="task priority4">
+        <div class="min-task-info">
+          <h1>Name</h1>
+          <h3>Due: date</h3>
+        </div>
+        <div class="collapsible">
+          <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, fugiat alias error eius magni illum cum itaque repellat ex ipsa temporibus asperiores recusandae, odit harum quae saepe voluptatibus laboriosam repudiandae?</p>
+        </div>
+      </div>
+
+      <div class="task priority5">
+        <div class="min-task-info">
+          <h1>Name</h1>
+          <h3>Due: date</h3>
+        </div>
+        <div class="collapsible">
+          <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, fugiat alias error eius magni illum cum itaque repellat ex ipsa temporibus asperiores recusandae, odit harum quae saepe voluptatibus laboriosam repudiandae?</p>
+        </div>
+      </div>
+
+      <div class="task priority6">
+        <div class="min-task-info">
+          <h1>Name</h1>
+          <h3>Due: date</h3>
+        </div>
+        <div class="collapsible open">
+          <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, fugiat alias error eius magni illum cum itaque repellat ex ipsa temporibus asperiores recusandae, odit harum quae saepe voluptatibus laboriosam repudiandae?</p>
+        </div>
+      </div>
     </div>
   </main>
 </body>
