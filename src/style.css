@@ -1,5 +1,10 @@
+@import url("./project-tree.css");
+
 :root {
     --border-radius: 12px;
+    --primary-color: antiquewhite;
+    --secondary-color: black;
+    --background-color: white;
 }
 
 * {
@@ -11,6 +16,7 @@
 body {
     min-height: 100svh;
     display: grid;
+    background-color: var(--primary-color);
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
 }
@@ -19,7 +25,7 @@ body {
     padding: 1.5rem;
     display: flex;
     justify-content: flex-end;
-    background-color: antiquewhite;
+    background-color: var(--primary-color);
 }
 
 .logo {
@@ -27,28 +33,45 @@ body {
 }
 
 .toolbar > button {
+    font: inherit;
+    border: none;
     margin-left: 2rem;
+    padding: .5em 1.5em;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
 }
 
 .sidebar {
     grid-column: 1;
     grid-row: 1 / span 2;
+    width: min(25svw, 250px);
     padding: 1.5rem;
-    background-color: antiquewhite;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-tree {
+    font-size: 1.25rem;
 }
 
 .task-board {
+    height: 100%;
     padding: 1.5rem;
     display: grid;
+    background-color: var(--background-color);
     grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
     gap: 1.5rem;
+    place-content: start;
+    border-top-left-radius: var(--border-radius);
 }
 
 .project,
 .task {
     position: relative;
     padding: 1rem;
-    background-color: antiquewhite;
+    background-color: var(--primary-color);
     border-radius: var(--border-radius);
 }
 
@@ -77,7 +100,7 @@ body {
 }
 
 .project-tasks .task {
-    background-color: white;
+    background-color: var(--background-color);
     margin-top: 1.5rem;
 }
 

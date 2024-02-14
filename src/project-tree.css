@@ -1,0 +1,43 @@
+/* 
+    Article I followed parts of to get this tree working: 
+    https://iamkate.com/code/tree-views/ 
+*/
+
+.project-tree {
+    --line-color: var(--secondary-color);
+    --spacing: .6rem;
+}
+
+.project-tree ul {
+    margin-top: 2px;
+    margin-left: calc(var(--spacing) / 2 - 2px);
+}
+
+.project-tree li {
+    display: block;
+    position: relative;
+    padding-left: calc(2 * var(--spacing) - 2px);
+}
+
+.project-tree > li {
+    padding: 0;
+}
+
+.project-tree ul li {
+    border-left: 2px solid var(--line-color);
+}
+
+.project-tree ul li:last-child {
+    border-color: transparent;
+}
+
+.project-tree ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -2px;
+    width: var(--spacing);
+    height: calc(var(--spacing) + 1px);
+    border: solid var(--line-color);
+    border-width: 0 0 2px 2px;
+}
