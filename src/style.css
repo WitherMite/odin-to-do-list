@@ -119,6 +119,7 @@ main {
     left: calc(-1 * var(--border-radius));
     top: calc(100% - 1.5rem);
     width: inherit;
+    max-width: calc(100% + var(--border-radius));
     padding: 1rem;
     background-color: inherit;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
@@ -162,6 +163,7 @@ main {
 
 .dropdown {
     width: 25%;
+    min-width: 32px;
     height: 300%;
     color: var(--secondary-color);
 }
