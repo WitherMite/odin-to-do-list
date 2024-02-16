@@ -1,12 +1,16 @@
+const outerDropdowns = document.querySelectorAll(
+  ".task-board > .task > .collapsible"
+);
+
 export default function updateTaskDropdowns() {
   const dropdownBtns = document.querySelectorAll(".dropdown-btn");
-  dropdownBtns.forEach(linkDropdown);
+  dropdownBtns.forEach(linkToDropdown);
 }
 
-function linkDropdown(btn) {
+function linkToDropdown(btn) {
   const dropdown = getDropdown(btn);
   if (!dropdown) return;
-  btn.addEventListener("click", toggleDropdown.bind(dropdown));
+  btn.addEventListener("click", toggleOpen.bind(dropdown));
 }
 
 function getDropdown(btn) {
@@ -15,6 +19,17 @@ function getDropdown(btn) {
   return btnParent.querySelector(".collapsible");
 }
 
-function toggleDropdown() {
+function toggleOpen() {
+  closeOtherDropdowns(this);
   this.classList.toggle("open");
-} 
+}
+
+function closeOtherDropdowns(dropdown) {
+  const isOuter = 
+    dropdown.parentNode.parentNode.classList.contains("task-board");
+  const open = dropdown.classList.contains('open');
+
+  if (isOuter && !open) {
+    outerDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+  }
+}
