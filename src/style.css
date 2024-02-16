@@ -113,6 +113,14 @@ main {
     justify-content: space-between;
 }
 
+.task h1 {
+    font-size: 1.5rem;
+}
+
+.task h3 {
+    font-size: 1rem;
+}
+
 .collapsible {
     display: none;
     position: absolute;
@@ -127,6 +135,7 @@ main {
 }
 
 .collapsible p {
+    font-size: .8rem;
     margin-bottom: .25rem;
 }
 
