@@ -1,7 +1,3 @@
-const outerDropdowns = document.querySelectorAll(
-  ".task-board > .task > .collapsible"
-);
-
 export default function updateTaskDropdowns() {
   const dropdownBtns = document.querySelectorAll(".dropdown-btn");
   dropdownBtns.forEach(linkToDropdown);
@@ -30,6 +26,10 @@ function closeOtherDropdowns(dropdown) {
   const open = dropdown.classList.contains('open');
 
   if (isOuter && !open) {
+    const outerDropdowns = document.querySelectorAll(
+      ".task-board > .task > .collapsible"
+    );
+    
     outerDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
   }
 }

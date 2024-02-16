@@ -6,32 +6,34 @@
     --priority-5-color: yellow;
     --priority-6-color: rgb(200, 255, 0);
     --priority-7-color: var(--secondary-color);
+
+    border-left: var(--border-radius) solid white;
 }
 
 .priority1 {
-    border-left: var(--border-radius) solid var(--priority-1-color)
+    border-left-color: var(--priority-1-color);
 }
 
 .priority2 {
-    border-left: var(--border-radius) solid var(--priority-2-color)
+    border-left-color: var(--priority-2-color);
 }
 
 .priority3 {
-    border-left: var(--border-radius) solid var(--priority-3-color)
+    border-left-color: var(--priority-3-color);
 }
 
 .priority4 {
-    border-left: var(--border-radius) solid var(--priority-4-color)
+    border-left-color: var(--priority-4-color);
 }
 
 .priority5 {
-    border-left: var(--border-radius) solid var(--priority-5-color)
+    border-left-color: var(--priority-5-color);
 }
 
 .priority6 {
-    border-left: var(--border-radius) solid var(--priority-6-color)
+    border-left-color: var(--priority-6-color);
 }
 
 .priority7 {
-    border-left: var(--border-radius) solid var(--priority-7-color)
+    border-left-color: var(--priority-7-color);
 }
