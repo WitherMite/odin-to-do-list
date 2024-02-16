@@ -1,8 +1,9 @@
-import Project from './to-do-modules/project.js'
-require('./style.css');
+import Project from './to-do-modules/project.js';
+import updateTaskDropdowns from './DOM-modules/task-ui.js';
+// require('./style.css'); remove when building to webpack
 
 // move parts into separate modules, just planning
-
+updateTaskDropdowns();
 const taskBoard = new Project('Task Board');
 // fill taskBoard with saved JSON tasks
 let currentProject = taskBoard;
