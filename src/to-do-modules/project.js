@@ -7,7 +7,7 @@ class Project extends Task { // projects can be tasks - should be nestable
   }
   constructor(name, desc, priority, dueDateRaw, ...tasks) {
     super(name, desc, priority, dueDateRaw);
-    this.tasks = [ ...tasks];
+    this.tasks = tasks;
   }
 
   _repairNested() {
