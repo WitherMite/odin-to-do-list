@@ -16,8 +16,8 @@ class Project extends Task { // projects can be tasks - should be nestable
 
   // methods to sort tasks
 
-  addTask(task) { // new tasks should be at top of list until resorted
-    this.tasks.unshift(task); 
+  addTask(task) {
+    this.tasks.push(task); 
   }
 }
 

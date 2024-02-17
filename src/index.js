@@ -20,6 +20,11 @@ currentProject.addTask(new Project('5', 'ddddddd', 9, "2025-01-12",
   new Task('3', 'ddddddd', 5, "2025-01-12"),
   new Task('3', 'ddddddd', 5, "2025-01-12"),
   new Task('3', 'ddddddd', 5, "2025-01-12"),
+  new Project('5', 'ddddddd', 9, "2025-01-12",
+    new Task('3', 'ddddddd', 5, "2025-01-12"),
+    new Task('3', 'ddddddd', 5, "2025-01-12"),
+    new Task('3', 'ddddddd', 5, "2025-01-12"),
+  ),
 ));
 currentProject.addTask(new Task('6', 'ddddddd', 0, "2025-01-12"));
 currentProject.addTask(new Task('7', 'ddddddd', 4, "2025-01-12"));
