@@ -2,9 +2,9 @@
 import dropdownImg from '../assets/down-arrow.svg';
 const taskBoard = document.querySelector(".task-board");
 
-export default function renderTasks(project, targetNode = taskBoard) {
+export default function renderTasks(project) {
   clearTaskBoard();
-  drawToTaskBoard(project, targetNode);
+  drawToTaskBoard(project, taskBoard);
 }
 
 function clearTaskBoard() {
