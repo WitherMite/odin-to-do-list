@@ -1,7 +1,6 @@
 import Project from './to-do-modules/project.js';
 import Task from './to-do-modules/task.js';
 import { updateTaskBoard } from './DOM-modules/DOM-handler.js';
-import { updateFormButtons } from './DOM-modules/creation-form.js';
 require('./style.css');
 
 // move parts into separate modules, just planning
@@ -31,6 +30,5 @@ currentProject.addTask(new Task('7', 'ddddddd', 4, "2025-01-12"));
 // add event listeners to option buttons
 // draw to DOM when currentProject.tasks is changed
 updateTaskBoard(currentProject); // write date handlers
-updateFormButtons();
 // allow user to select a project from a tree in a sidebar and/or from project card to set as current project
 // limit how deep nested projects are drawn to ~3, but show indicator there are more
