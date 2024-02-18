@@ -12,6 +12,7 @@
     <button>option</button>
     <button>option</button>
   </nav>
+
   <div class="sidebar-container">
     <div class="sidebar">
       <h2>Projects</h2>
@@ -43,11 +44,37 @@
       <button class="new-task-btn">Add Task</button>
     </div>
   </div>
+
   <main>
     <div class="task-board">
 
     </div>
   </main>
+
+  <dialog class="new-task-modal">
+    <button class="close-modal-btn">X</button>
+    <h1>Create New Task:</h1>
+    <form action="">
+      <div>
+        <label for="name">Task:</label>
+        <input type="text" id="name">
+      </div>
+      <div>
+        <label for="desc">Description:</label>
+        <input type="text" id="desc">
+      </div>
+      <div>
+        <label for="due">Due date:</label>
+        <input type="text" id="due">
+      </div>
+      <div>
+        <label for="pri">Priority:</label>
+        <input type="text" id="pri">
+      </div>
+      <button class="submit-btn">Submit</button>
+    </form>
+  </dialog>
+
   <template id="task-template">
 
     <div class="task">

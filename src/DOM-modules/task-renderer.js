@@ -4,21 +4,21 @@ const taskBoard = document.querySelector(".task-board");
 
 export default function renderTasks(project) {
   clearTaskBoard();
-  drawToTaskBoard(project, taskBoard);
+  drawToNode(project, taskBoard);
 }
 
 function clearTaskBoard() {
   while (taskBoard.firstChild) taskBoard.removeChild(taskBoard.firstChild);
 }
 
-function drawToTaskBoard(project, targetNode, isInner = false) {
+function drawToNode(project, targetNode, isInner = false) {
   project.tasks.forEach(task => {
     const taskHtml = createTaskHtml(task);
     if (isInner) trimInnerButton(taskHtml);
 
     writeTaskToHtml(task, taskHtml);
 
-    if (task.tasks) drawToTaskBoard(task, taskHtml.taskList, true);
+    if (task.tasks) drawToNode(task, taskHtml.taskList, true);
     targetNode.appendChild(taskHtml.container);
   });
 }
@@ -60,5 +60,8 @@ function createTaskHtml(task) {
 function createInnerTaskList() {
   const taskList = document.createElement('div');
   taskList.classList.add('project-tasks');
+  const label = document.createElement('h3');
+  label.textContent = 'Tasks:';
+  taskList.appendChild(label);
   return taskList;
 }
