@@ -4,7 +4,7 @@ import { updateTaskBoard } from './DOM-modules/DOM-handler.js';
 require('./style.css');
 
 // move parts into separate modules, just planning
-const taskBoard = new Project('Task Board');
+const taskBoard = new Project('To-do List');
 // fill taskBoard with saved JSON tasks
 let currentProject = taskBoard;
 console.log(currentProject);
@@ -16,7 +16,7 @@ currentProject.addTask(new Project('2', 'ddddddd', 1, "2025-01-12",
 currentProject.addTask(new Task('3', 'ddddddd', 5, "2025-01-12"));
 currentProject.addTask(new Task('4', 'ddddddd', 7, "2025-01-12"));
 currentProject.addTask(new Project('5', 'ddddddd', 9, "2025-01-12",
-  new Task('3', 'ddddddd', 5, "2025-01-12"),
+  new Task('3', 'ddddddd', 5, ""),
   new Task('3', 'ddddddd', 5, "2025-01-12"),
   new Task('3', 'ddddddd', 5, "2025-01-12"),
   new Project('5', 'ddddddd', 9, "2025-01-12",

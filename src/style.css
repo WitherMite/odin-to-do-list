@@ -48,7 +48,8 @@ input:hover  {
     gap: 1rem;
 }
 
-.logo {
+.title {
+    font-size: 2rem;
     margin-right: auto;
     display: grid;
     place-items: center start;

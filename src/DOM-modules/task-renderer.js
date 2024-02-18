@@ -1,8 +1,10 @@
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow, isValid } from "date-fns";
 import dropdownImg from '../assets/down-arrow.svg';
 const taskBoard = document.querySelector(".task-board");
+const title = document.querySelector('.title');
 
 export default function renderTasks(project) {
+  title.textContent = project.name;
   clearTaskBoard();
   drawToNode(project, taskBoard);
 }
@@ -27,10 +29,14 @@ function writeTaskToHtml(task, html) {
   html.container.classList.add(`priority${task.priority}`);
   html.name.textContent = task.name;
   html.description.textContent = task.description;
-  html.dueDate.textContent += formatDistanceToNow(
-    task.dueDate,
-    {addSuffix: true}
-  );
+  if (isValid(task.dueDate)) {
+    html.dueDate.textContent += formatDistanceToNow(
+      task.dueDate,
+      {addSuffix: true}
+    );
+  } else {
+    html.dueDate.textContent = null;
+  }
 }
 
 function trimInnerButton(taskHtml) {
