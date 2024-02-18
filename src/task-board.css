@@ -17,8 +17,12 @@
     font-size: 1.5rem;
 }
 
-.task h3 {
+.task h2 {
     font-size: 1rem;
+}
+
+.task h3 {
+    font-size: .75rem;
 }
 
 .collapsible {

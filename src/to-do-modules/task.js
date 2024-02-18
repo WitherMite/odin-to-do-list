@@ -1,3 +1,5 @@
+import { toDate } from 'date-fns'
+
 class Task {
   static from(JSON) {
     // re-create task from saved JSON object (by reassigning prototypes?)
@@ -5,7 +7,7 @@ class Task {
   constructor(name, desc, priority = 4, dueDateRaw) {
     this._created = new Date();
     this._priority = clampPriority(priority);
-    this._dueDate = checkDate(dueDateRaw);
+    this._dueDate = toDate(dueDateRaw);
     this.name = name;
     this.description = desc;
     this.completed = false;
@@ -19,7 +21,7 @@ class Task {
     return this._dueDate;
   }
   set dueDate(date) {
-    this._dueDate = checkDate(date);
+    this._dueDate = toDate(date);
   }
 
   get priority() {
@@ -28,12 +30,6 @@ class Task {
   set priority(num) {
     this._priority = clampPriority(num);
   }
-}
-
-function checkDate(rawDate) {
-  if (!rawDate) return null;
-  if (rawDate instanceof Date) return rawDate;
-  return new Date(rawDate);
 }
 
 function clampPriority(num) {

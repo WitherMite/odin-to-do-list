@@ -1,4 +1,4 @@
-// import smallDateString from "";
+import { formatDistanceToNow } from "date-fns";
 import dropdownImg from '../assets/down-arrow.svg';
 const taskBoard = document.querySelector(".task-board");
 
@@ -27,7 +27,10 @@ function writeTaskToHtml(task, html) {
   html.container.classList.add(`priority${task.priority}`);
   html.name.textContent = task.name;
   html.description.textContent = task.description;
-  // html.dueDate.textContent = smallDateString(task.dueDate);
+  html.dueDate.textContent += formatDistanceToNow(
+    task.dueDate,
+    {addSuffix: true}
+  );
 }
 
 function trimInnerButton(taskHtml) {
@@ -46,7 +49,7 @@ function createTaskHtml(task) {
     container: html.querySelector('.task'),
     name: html.querySelector('.name'),
     description: html.querySelector('.description'),
-    dueDate: html.querySelector('.dueDate'),
+    dueDate: html.querySelector('.due-date'),
     dropdown: html.querySelector('.collapsible'),
   };
 
@@ -60,7 +63,7 @@ function createTaskHtml(task) {
 function createInnerTaskList() {
   const taskList = document.createElement('div');
   taskList.classList.add('project-tasks');
-  const label = document.createElement('h3');
+  const label = document.createElement('h2');
   label.textContent = 'Tasks:';
   taskList.appendChild(label);
   return taskList;
