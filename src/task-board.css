@@ -44,6 +44,7 @@
 .task h3 {
     align-self: flex-end;
     font-size: .75rem;
+    padding-bottom: .25rem;
 }
 
 .collapsible {
@@ -72,7 +73,7 @@
     box-shadow: none;
 }
 
-.project-tasks > h3 {
+.project-tasks > h2 {
     margin-bottom: -.5rem;
 }
 
