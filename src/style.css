@@ -124,9 +124,13 @@ dialog {
 
 .close-modal-btn {
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    top: .75rem;
+    right: 1rem;
     background-color: transparent;
+}
+
+.close-modal-img {
+    width: 1.5rem;
 }
 
 .close-modal-btn:hover {

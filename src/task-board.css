@@ -10,7 +10,27 @@
 
 .min-task-info {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+}
+
+.ctrl-btns {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    display: flex;
+    gap: .25rem;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: .25rem;
+    background-color: transparent;
+}
+
+.edit-img,
+.delete-img {
+    width: 1.25rem;
 }
 
 .task h1 {
@@ -22,6 +42,7 @@
 }
 
 .task h3 {
+    align-self: flex-end;
     font-size: .75rem;
 }
 
@@ -76,19 +97,21 @@
     justify-content: center;
 }
 
-.dropdown {
+.dropdown-img {
     width: 25%;
     min-width: 32px;
     height: 300%;
     color: var(--secondary-color);
 }
 
-.open > .dropdown-btn > .dropdown,
-.open + .dropdown-btn > .dropdown {
+.open > .dropdown-btn > .dropdown-img,
+.open + .dropdown-btn > .dropdown-img {
     transform: rotateX(180deg);
     margin-bottom: -1rem;
 }
 
-.dropdown-btn:hover {
+.dropdown-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
     outline: none;
 }

@@ -1,6 +1,10 @@
+import hideBtnImg from '../assets/close.svg';
+
 const modal = document.querySelector('.new-task-modal');
 const hideBtn = modal.querySelector('.close-modal-btn');
 const submitBtn = modal.querySelector('.submit-btn');
+
+hideBtn.querySelector('img').src = hideBtnImg;
 
 function updateFormButtons() {
   const btns = document.querySelectorAll('.new-task-btn');

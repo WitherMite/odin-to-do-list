@@ -1,5 +1,7 @@
 import { formatDistanceToNow, isValid } from "date-fns";
 import dropdownImg from '../assets/down-arrow.svg';
+import deleteImg from '../assets/delete.svg';
+import editImg from '../assets/edit.svg';
 const taskBoard = document.querySelector(".task-board");
 const title = document.querySelector('.title');
 
@@ -48,8 +50,9 @@ function createTaskHtml(task) {
   const template = document.querySelector('#task-template');
   const html = template.content.cloneNode(true);
 
-  const btnImages = html.querySelectorAll('img');
-  btnImages.forEach(img => img.src = dropdownImg);
+  setAllImgSrc(html, '.dropdown-img', dropdownImg);
+  setAllImgSrc(html, '.delete-img', deleteImg);
+  setAllImgSrc(html, '.edit-img', editImg);
 
   const taskHtml = {
     container: html.querySelector('.task'),
@@ -64,6 +67,11 @@ function createTaskHtml(task) {
     taskHtml.taskList = taskHtml.dropdown.querySelector('.project-tasks');
   }
   return taskHtml;
+}
+
+function setAllImgSrc(parent, selector, file) {
+  const images = parent.querySelectorAll(selector);
+  images.forEach(img => img.src = file);
 }
 
 function createInnerTaskList() {

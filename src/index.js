@@ -27,8 +27,12 @@ currentProject.addTask(new Project('5', 'ddddddd', 9, "2025-01-12",
 ));
 currentProject.addTask(new Task('6', 'ddddddd', 0, "2025-01-12"));
 currentProject.addTask(new Task('7', 'ddddddd', 4, "2025-01-12"));
-// add event listeners to option buttons
-// draw to DOM when currentProject.tasks is changed
-updateTaskBoard(currentProject); // write date handlers
+// add event listeners to option buttons to sort currentProject
+// draw to DOM when currentProject is changed
+updateTaskBoard(currentProject);
+// user create tasks
+// user edit tasks
+// user delete tasks
+
 // allow user to select a project from a tree in a sidebar and/or from project card to set as current project
 // limit how deep nested projects are drawn to ~3, but show indicator there are more

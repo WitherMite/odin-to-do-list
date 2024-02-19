@@ -52,7 +52,7 @@
   </main>
 
   <dialog class="new-task-modal">
-    <button class="close-modal-btn">X</button>
+    <button class="close-modal-btn"><img class="close-modal-img" src="" alt=""></button>
     <h1>Create New Task:</h1>
     <form action="">
       <div>
@@ -78,6 +78,10 @@
   <template id="task-template">
 
     <div class="task">
+      <div class="ctrl-btns">
+        <button class="edit-btn"><img class="edit-img" src="" alt=""></button>
+        <button class="delete-btn"><img class="delete-img" src="" alt=""></button>
+      </div>
 
       <div class="min-task-info">
         <h1 class="name"></h1>
@@ -87,12 +91,12 @@
       <div class="collapsible">
         <p class="description"></p>
         <button class="dropdown-btn">
-          <img class="dropdown" src="" alt="">
+          <img class="dropdown-img" src="" alt="">
         </button>
       </div>
 
       <button class="dropdown-btn">
-        <img class="dropdown" src="" alt="">
+        <img class="dropdown-img" src="" alt="">
       </button>
 
     </div>
