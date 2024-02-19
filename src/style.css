@@ -103,7 +103,7 @@ main {
     border-top-left-radius: var(--border-radius);
 }
 
-.new-task-btn {
+.new-project-btn {
     font-size: 1.5rem;
     margin-top: auto;
     width: 100%;

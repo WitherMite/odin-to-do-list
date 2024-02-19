@@ -27,7 +27,7 @@ currentProject.addTask(new Project('5', 'ddddddd', 9, "2025-01-12",
 ));
 currentProject.addTask(new Task('6', 'ddddddd', 0, "2025-01-12"));
 currentProject.addTask(new Task('7', 'ddddddd', 4, "2025-01-12"));
-// add event listeners to option buttons to sort currentProject
+// add event listeners to option buttons to sort currentProject.tasks
 // draw to DOM when currentProject is changed
 updateTaskBoard(currentProject);
 // user create tasks

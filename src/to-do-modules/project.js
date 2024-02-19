@@ -19,6 +19,10 @@ class Project extends Task { // projects can be tasks - should be nestable
   addTask(task) {
     this.tasks.push(task); 
   }
+
+  removeTask(index) {
+    this.tasks.splice(index, 0);
+  }
 }
 
 export default Project;

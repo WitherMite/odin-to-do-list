@@ -50,9 +50,12 @@ function createTaskHtml(task) {
   const template = document.querySelector('#task-template');
   const html = template.content.cloneNode(true);
 
-  setAllImgSrc(html, '.dropdown-img', dropdownImg);
-  setAllImgSrc(html, '.delete-img', deleteImg);
-  setAllImgSrc(html, '.edit-img', editImg);
+  const dropImages = html.querySelectorAll('.dropdown-img');
+  dropImages.forEach(img => img.src = dropdownImg);
+  const deleteImage = html.querySelector('.delete-img');
+  deleteImage.src = deleteImg;
+  const editImage = html.querySelector('.edit-img');
+  editImage.src = editImg;
 
   const taskHtml = {
     container: html.querySelector('.task'),
@@ -67,11 +70,6 @@ function createTaskHtml(task) {
     taskHtml.taskList = taskHtml.dropdown.querySelector('.project-tasks');
   }
   return taskHtml;
-}
-
-function setAllImgSrc(parent, selector, file) {
-  const images = parent.querySelectorAll(selector);
-  images.forEach(img => img.src = file);
 }
 
 function createInnerTaskList() {
