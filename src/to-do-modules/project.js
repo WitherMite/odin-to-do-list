@@ -21,7 +21,7 @@ class Project extends Task { // projects can be tasks - should be nestable
   }
 
   removeTask(index) {
-    this.tasks.splice(index, 0);
+    this.tasks.splice(index, 1);
   }
 }
 
