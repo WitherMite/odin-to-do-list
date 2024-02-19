@@ -15,19 +15,19 @@ function clearTaskBoard() {
   while (taskBoard.firstChild) taskBoard.removeChild(taskBoard.firstChild);
 }
 
-function drawToNode(project, targetNode, isInner = false) {
-  project.tasks.forEach(task => {
+function drawToNode(project, targetNode, isInner = false, parents = []) {
+  project.tasks.forEach((task, index) => {
     const taskHtml = createTaskHtml(task);
     if (isInner) trimInnerButton(taskHtml);
 
-    writeTaskToHtml(task, taskHtml);
-
-    if (task.tasks) drawToNode(task, taskHtml.taskList, true);
+    const indexTree = [ ...parents, index];
+    writeTaskToHtml(task, taskHtml, indexTree);
+    if (task.tasks) drawToNode(task, taskHtml.taskList, true, indexTree);
     targetNode.appendChild(taskHtml.container);
   });
 }
 
-function writeTaskToHtml(task, html) {
+function writeTaskToHtml(task, html, indexTree) {
   html.container.classList.add(`priority${task.priority}`);
   html.name.textContent = task.name;
   html.description.textContent = task.description;
@@ -39,6 +39,7 @@ function writeTaskToHtml(task, html) {
   } else {
     html.dueDate.textContent = null;
   }
+  html.buttons.forEach(btn => btn.dataset.tree = indexTree);
 }
 
 function trimInnerButton(taskHtml) {
@@ -63,6 +64,7 @@ function createTaskHtml(task) {
     description: html.querySelector('.description'),
     dueDate: html.querySelector('.due-date'),
     dropdown: html.querySelector('.collapsible'),
+    buttons: html.querySelectorAll('button'),
   };
 
   if (task.tasks) {
