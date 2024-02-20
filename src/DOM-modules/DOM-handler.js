@@ -1,10 +1,14 @@
 import renderTasks from "./task-renderer.js";
 import updateTaskDropdowns from "./task-dropdowns.js";
+import updateUiButtons from "./ui-buttons.js";
 import { updateFormButtons } from './creation-form.js';
+import { getCurrentProject } from '../to-do-modules/task-tree.js';
 
-function updateTaskBoard(project) {
-  renderTasks(project);
+function updateTaskBoard() {
+  console.log(getCurrentProject());
+  renderTasks(getCurrentProject());
   updateTaskDropdowns();
+  updateUiButtons();
   updateFormButtons();
 }
 
