@@ -1,11 +1,12 @@
 import { walkTree } from './task-tree.js';
 
-function removeTaskfromProject(taskTree) {
-  const taskIndex = Number(taskTree.pop());
-  const parentTree = taskTree.map(i => Number(i));
+function removeTaskfromTree(taskPos) {
+  const copyPos = [...taskPos];
+  const taskIndex = copyPos.pop();
+  const parentPos = copyPos;
 
-  const project = walkTree(parentTree);
+  const project = walkTree(parentPos);
   project.removeTask(taskIndex);
 }
 
-export { removeTaskfromProject };
+export { removeTaskfromTree};

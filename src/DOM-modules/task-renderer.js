@@ -20,14 +20,14 @@ function drawToNode(project, targetNode, isInner = false, parents = []) {
     const taskHtml = createTaskHtml(task);
     if (isInner) trimInnerButton(taskHtml);
 
-    const indexTree = [ ...parents, index];
-    writeTaskToHtml(task, taskHtml, indexTree);
-    if (task.tasks) drawToNode(task, taskHtml.taskList, true, indexTree);
+    const position = [ ...parents, index];
+    writeTaskToHtml(task, taskHtml, position);
+    if (task.tasks) drawToNode(task, taskHtml.taskList, true, position);
     targetNode.appendChild(taskHtml.container);
   });
 }
 
-function writeTaskToHtml(task, html, indexTree) {
+function writeTaskToHtml(task, html, position) {
   html.container.classList.add(`priority${task.priority}`);
   html.name.textContent = task.name;
   html.description.textContent = task.description;
@@ -39,7 +39,8 @@ function writeTaskToHtml(task, html, indexTree) {
   } else {
     html.dueDate.textContent = null;
   }
-  html.buttons.forEach(btn => btn.dataset.tree = indexTree);
+  html.buttons.forEach(btn => btn.dataset.tree = position);
+  html.dropdown.dataset.tree = position;
 }
 
 function trimInnerButton(taskHtml) {

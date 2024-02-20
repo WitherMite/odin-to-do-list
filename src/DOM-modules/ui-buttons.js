@@ -1,5 +1,5 @@
-import { updateTaskBoard } from '../DOM-modules/DOM-handler.js';
-import { removeTaskfromProject } from '../to-do-modules/task-handler.js';
+import { updateTaskBoard, openProject } from '../DOM-modules/DOM-handler.js';
+import { removeTaskfromTree } from '../to-do-modules/task-handler.js';
 
 export default function updateUiButtons() {
   const deleteBtns = document.querySelectorAll('.delete-btn');
@@ -7,7 +7,13 @@ export default function updateUiButtons() {
 }
 
 function deleteTask() {
-  const indexTree = this.dataset.tree.split(',');
-  removeTaskfromProject(indexTree);
+  const indexTree = this.dataset.tree.split(',')
+                                     .map(i => Number(i));
+  removeTaskfromTree(indexTree);
   updateTaskBoard();
+  if (indexTree.length > 1) {
+    indexTree.pop();
+    const parentPos = indexTree;
+    openProject(parentPos);
+  }
 }

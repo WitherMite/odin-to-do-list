@@ -1,4 +1,4 @@
-export default function updateTaskDropdowns() {
+function updateTaskDropdowns() {
   const dropdownBtns = document.querySelectorAll(".dropdown-btn");
   dropdownBtns.forEach(linkToDropdown);
 }
@@ -15,9 +15,14 @@ function getDropdown(btn) {
   return btnParent.querySelector(".collapsible");
 }
 
-function toggleOpen() {
-  closeOtherDropdowns(this);
-  this.classList.toggle("open");
+function toggleOpen() { 
+  // probably some better way to achive this and expose the open fn, idk.
+  openDropdown(this);
+}
+
+function openDropdown(dropdown) {
+  closeOtherDropdowns(dropdown);
+  dropdown.classList.toggle("open");
 }
 
 function closeOtherDropdowns(dropdown) {
@@ -33,3 +38,5 @@ function closeOtherDropdowns(dropdown) {
     outerDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
   }
 }
+
+export { updateTaskDropdowns, openDropdown };
