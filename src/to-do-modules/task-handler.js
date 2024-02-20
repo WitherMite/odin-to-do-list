@@ -5,7 +5,6 @@ function removeTaskfromProject(taskTree) {
   const parentTree = taskTree.map(i => Number(i));
 
   const project = walkTree(parentTree);
-  console.log(project);
   project.removeTask(taskIndex);
 }
 

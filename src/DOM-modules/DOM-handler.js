@@ -5,7 +5,6 @@ import { updateFormButtons } from './creation-form.js';
 import { getCurrentProject } from '../to-do-modules/task-tree.js';
 
 function updateTaskBoard() {
-  console.log(getCurrentProject());
   renderTasks(getCurrentProject());
   updateTaskDropdowns();
   updateUiButtons();

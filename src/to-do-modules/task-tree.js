@@ -11,12 +11,10 @@ function getCurrentProject() {
   return currentProject;
 }
 
-function walkTree(tree) {
+function walkTree(treePos) {
   let position = currentProject;
-  console.log(position);
-  tree.forEach(i => {
+  treePos.forEach(i => {
     position = position.tasks[i];
-    console.log(position);
   });
   return position;
 }
