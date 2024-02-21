@@ -1,5 +1,5 @@
 import { updateTaskBoard, openProject } from '../DOM-modules/DOM-handler.js';
-import { removeTaskfromTree } from '../to-do-modules/task-handler.js';
+import { removeTaskfromTree } from '../to-do-modules/task-tree.js';
 
 export default function updateUiButtons() {
   const deleteBtns = document.querySelectorAll('.delete-btn');

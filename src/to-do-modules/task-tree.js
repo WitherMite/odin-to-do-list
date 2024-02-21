@@ -1,7 +1,8 @@
 import Task from "./task";
 import Project from "./project";
 
-let currentProject = new Project('To-do List');
+const containerProject = new Project('To-do List');
+let currentProject = containerProject;
 
 function setCurrentProject(project) {
   currentProject = project
@@ -11,12 +12,26 @@ function getCurrentProject() {
   return currentProject;
 }
 
-function walkTree(treePos) {
+function removeTaskfromTree(taskPos) {
+  const copyPos = [...taskPos];
+  const taskIndex = copyPos.pop();
+  const parentPos = copyPos;
+
+  const project = getTaskFromTree(parentPos);
+  project.removeTask(taskIndex);
+}
+
+function getTaskFromTree(taskPos) {
   let position = currentProject;
-  treePos.forEach(i => {
+  taskPos.forEach(i => {
     position = position.tasks[i];
   });
   return position;
 }
 
-export { getCurrentProject, setCurrentProject, walkTree };
+export {
+  getCurrentProject,
+  setCurrentProject,
+  getTaskFromTree,
+  removeTaskfromTree,
+};
