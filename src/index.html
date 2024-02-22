@@ -41,7 +41,7 @@
         <li><span class="tree-entry">3</span></li>
         <li><span class="tree-entry">4</span></li>
       </ul>
-      <button class="new-task-btn">Add Project</button>
+      <button class="new-task-btn">Add Task</button>
     </div>
   </div>
   <main>
@@ -55,12 +55,16 @@
     <h1>Create New Task:</h1>
     <form action="">
       <div>
-        <label for="name">Task:</label>
-        <input type="text" id="name">
+        <label for="project-picker">In:</label>
+        <input type="text" id="project-picker" list="project-list">
+        <datalist id="project-list">
+          <option>test</option>
+          <option>test2</option>
+        </datalist>
       </div>
       <div>
-        <label for="desc">Description:</label>
-        <textarea id="desc"></textarea>
+        <label for="name">Task:</label>
+        <input type="text" id="name" required>
       </div>
       <div>
         <label for="due">Due date:</label>
@@ -68,8 +72,16 @@
         <input type="time">
       </div>
       <div>
+        <label for="desc">Description:</label>
+        <textarea id="desc" rows="5"></textarea>
+      </div>
+      <div>
         <label for="pri">Priority:</label>
         <input type="range" id="pri" min="1" max="7">
+      </div>
+      <div>
+        <label for="project-option">As project:</label>
+        <input type="checkbox" id="project-option">
       </div>
       <button class="submit-btn">Submit</button>
     </form>
