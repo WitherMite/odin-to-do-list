@@ -6,7 +6,9 @@ function updateTaskDropdowns() {
 function linkToDropdown(btn) {
   const dropdown = getDropdown(btn);
   if (!dropdown) return;
-  btn.addEventListener("click", toggleOpen.bind(dropdown));
+  btn.addEventListener("click", () => {
+    toggleDropdown(dropdown);
+  });
 }
 
 function getDropdown(btn) {
@@ -15,12 +17,7 @@ function getDropdown(btn) {
   return btnParent.querySelector(".collapsible");
 }
 
-function toggleOpen() { 
-  // probably some better way to achive this and expose the open fn, idk.
-  openDropdown(this);
-}
-
-function openDropdown(dropdown) {
+function toggleDropdown(dropdown) {
   closeOtherDropdowns(dropdown);
   dropdown.classList.toggle("open");
 }
@@ -39,4 +36,4 @@ function closeOtherDropdowns(dropdown) {
   }
 }
 
-export { updateTaskDropdowns, openDropdown };
+export { updateTaskDropdowns, toggleDropdown };

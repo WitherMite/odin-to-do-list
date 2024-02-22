@@ -84,11 +84,11 @@ input:hover  {
     font-size: 1.25rem;
 }
 
-.project-tree li {
+.tree-entry {
     cursor: pointer;
 }
 
-.project-tree span:hover {
+.tree-entry:hover {
     text-decoration: underline solid var(--secondary-color) 2px;
 }
 

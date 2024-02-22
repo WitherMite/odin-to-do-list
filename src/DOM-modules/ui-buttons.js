@@ -7,13 +7,13 @@ export default function updateUiButtons() {
 }
 
 function deleteTask() {
-  const indexTree = this.dataset.tree.split(',')
-                                     .map(i => Number(i));
-  removeTaskfromTree(indexTree);
+  const treePos = this.dataset.tree.split(',')
+                                   .map(i => Number(i));
+  removeTaskfromTree(treePos);
   updateTaskBoard();
-  if (indexTree.length > 1) {
-    indexTree.pop();
-    const parentPos = indexTree;
+  if (treePos.length > 1) {
+    treePos.pop();
+    const parentPos = treePos;
     openProject(parentPos);
   }
 }

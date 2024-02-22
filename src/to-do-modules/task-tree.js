@@ -32,6 +32,5 @@ function getTaskFromTree(taskPos) {
 export {
   getCurrentProject,
   setCurrentProject,
-  getTaskFromTree,
   removeTaskfromTree,
 };
