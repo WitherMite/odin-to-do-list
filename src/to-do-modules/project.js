@@ -17,6 +17,7 @@ class Project extends Task { // projects can be tasks - should be nestable
   // methods to sort tasks
 
   addTask(task) {
+    if (!task instanceof Task) return;
     this.tasks.push(task); 
   }
 

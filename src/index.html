@@ -55,21 +55,20 @@
     <h1>Create New Task:</h1>
     <form action="">
       <div>
-        <label for="project-picker">In:</label>
-        <input type="text" id="project-picker" list="project-list">
-        <datalist id="project-list">
+        <label for="project-select">In:</label>
+        <select id="project-select" required>
           <option>test</option>
           <option>test2</option>
-        </datalist>
+        </select>
       </div>
       <div>
         <label for="name">Task:</label>
         <input type="text" id="name" required>
       </div>
       <div>
-        <label for="due">Due date:</label>
-        <input type="date" id="due">
-        <input type="time">
+        <label for="date-due">Due date:</label>
+        <input type="date" id="date-due">
+        <input type="time" id="time-due">
       </div>
       <div>
         <label for="desc">Description:</label>

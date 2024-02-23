@@ -1,9 +1,13 @@
 import { updateTaskBoard, openProject } from '../DOM-modules/DOM-handler.js';
 import { removeTaskfromTree } from '../to-do-modules/task-tree.js';
+import { showForm } from './form.js';
 
 export default function updateUiButtons() {
   const deleteBtns = document.querySelectorAll('.delete-btn');
   deleteBtns.forEach(btn => btn.addEventListener('click', deleteTask));
+
+  const formBtns = document.querySelectorAll('.new-task-btn');
+  formBtns.forEach(btn => btn.addEventListener('click', showForm));
 }
 
 function deleteTask() {

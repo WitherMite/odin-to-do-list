@@ -32,7 +32,8 @@ class Task {
   }
 }
 
-function clampPriority(num) {
+function clampPriority(x) {
+  const num = Number(x);
   if (num > 7) return 7;
   if (num < 1) return 1;
   return num;
