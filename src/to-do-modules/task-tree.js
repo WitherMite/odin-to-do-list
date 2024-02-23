@@ -29,8 +29,18 @@ function getTaskFromTree(taskPos) {
   return position;
 }
 
+function getAllProjects(project = currentProject) {
+  return project.tasks.reduce((acc, task) => {
+    if (task instanceof Project) {
+      acc = [...acc, ...getAllProjects(task)];
+    }
+    return acc;
+  }, [project]);
+}
+
 export {
   getCurrentProject,
   setCurrentProject,
   removeTaskfromTree,
+  getAllProjects
 };

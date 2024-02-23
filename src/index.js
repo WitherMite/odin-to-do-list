@@ -1,7 +1,7 @@
 import Project from './to-do-modules/project.js';
 import Task from './to-do-modules/task.js';
 import { updateTaskBoard } from './DOM-modules/DOM-handler.js';
-import { getCurrentProject } from './to-do-modules/task-tree.js';
+import { getCurrentProject, getAllProjects } from './to-do-modules/task-tree.js';
 require('./style.css');
 
 // move parts into separate modules, just planning
@@ -28,6 +28,7 @@ currentProject.addTask(new Task('6', 'ddddddd', 0, "2025-01-12"));
 currentProject.addTask(new Task('7', 'ddddddd', 4, "2025-01-12"));
 // add event listeners to option buttons to sort currentProject.tasks
 updateTaskBoard();
+console.table(getAllProjects());
 // user create tasks
 // user edit tasks
 

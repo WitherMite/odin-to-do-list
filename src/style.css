@@ -143,7 +143,11 @@ dialog {
     width: 1.5rem;
 }
 
-.close-modal-btn:hover {
+.close-modal-btn:hover,
+input[type='checkbox']:hover,
+input[type='checkbox']:focus,
+input[type='range']:hover,
+input[type='range']:focus  {
     outline: none;
 }
 
@@ -177,6 +181,7 @@ textarea {
 }
 
 input[type='checkbox'] {
+    cursor: pointer;
     flex: 0 auto;
     width: 1.5rem;
 }

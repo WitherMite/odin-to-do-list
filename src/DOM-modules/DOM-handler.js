@@ -21,9 +21,9 @@ function openProject(position) {
 
     const reqDropdown = dropdowns.find(drop => {
       const dropPos = drop.dataset.tree.split(',');
-      const dropIndex = dropPos.at(-1);
+      const dropIndex = Number(dropPos.at(-1));
 
-      return Number(dropIndex) === reqIndex;
+      return dropIndex === reqIndex;
     });
     
     dropdowns = Array.from(reqDropdown.querySelectorAll(
