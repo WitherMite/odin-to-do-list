@@ -36,4 +36,27 @@ function closeOtherDropdowns(dropdown) {
   }
 }
 
-export { updateTaskDropdowns, toggleDropdown };
+function openProject(position) {
+  let dropdowns = Array.from(document.querySelectorAll(
+    '.task-board > .task > .collapsible'
+  ));
+
+  while (position.length > 0) {
+    const reqIndex = position.shift();
+
+    const reqDropdown = dropdowns.find(drop => {
+      const dropPos = drop.dataset.tree.split(',');
+      const dropIndex = Number(dropPos.at(-1));
+
+      return dropIndex === reqIndex;
+    });
+    
+    dropdowns = Array.from(reqDropdown.querySelectorAll(
+      '.task > .collapsible'
+    ));
+
+    toggleDropdown(reqDropdown);
+  }
+}
+
+export { updateTaskDropdowns, toggleDropdown, openProject };

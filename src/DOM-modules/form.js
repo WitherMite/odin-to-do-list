@@ -1,6 +1,6 @@
 import hideBtnImg from '../assets/close.svg';
+import updateTaskBoard from './DOM-handler.js';
 import { set } from 'date-fns';
-import { updateTaskBoard } from './DOM-handler.js';
 import { updateProjectSelector } from "./project-selector.js";
 import { addTaskToTree } from '../to-do-modules/task-tree.js';
 

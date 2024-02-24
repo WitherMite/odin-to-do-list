@@ -1,4 +1,5 @@
-import { updateTaskBoard, openProject } from '../DOM-modules/DOM-handler.js';
+import updateTaskBoard from '../DOM-modules/DOM-handler.js';
+import { openProject } from '../DOM-modules/task-dropdowns.js'
 import { removeTaskfromTree } from '../to-do-modules/task-tree.js';
 import { showForm } from './form.js';
 

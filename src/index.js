@@ -1,6 +1,6 @@
 import Project from './to-do-modules/project.js';
 import Task from './to-do-modules/task.js';
-import { updateTaskBoard } from './DOM-modules/DOM-handler.js';
+import updateTaskBoard from './DOM-modules/DOM-handler.js';
 import { getCurrentProject, getAllProjects } from './to-do-modules/task-tree.js';
 require('./style.css');
 
