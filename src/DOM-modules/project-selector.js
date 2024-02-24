@@ -1,6 +1,6 @@
 const select = document.querySelector('#project-select');
 
-function updateProjectSelector() {
+export default function updateProjectSelector() {
   clearSelector();
   const projects = document.querySelectorAll('.tree-entry');
   projects.forEach((proj) => {
@@ -14,7 +14,3 @@ function updateProjectSelector() {
 function clearSelector() {
   while (select.firstChild) select.removeChild(select.firstChild);
 }
-
-export {
-  updateProjectSelector,
-};

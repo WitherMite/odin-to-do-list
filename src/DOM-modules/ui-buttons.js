@@ -1,7 +1,7 @@
 import updateTaskBoard from '../DOM-modules/DOM-handler.js';
-import { openProject } from '../DOM-modules/task-dropdowns.js'
+import showForm from './form.js';
+import { openTask } from '../DOM-modules/task-dropdowns.js'
 import { removeTaskfromTree } from '../to-do-modules/task-tree.js';
-import { showForm } from './form.js';
 
 export default function updateUiButtons() {
   const deleteBtns = document.querySelectorAll('.delete-btn');
@@ -20,6 +20,6 @@ function deleteTask() {
   if (treePos.length > 1) {
     treePos.pop();
     const parentPos = treePos;
-    openProject(parentPos);
+    openTask(parentPos);
   }
 }

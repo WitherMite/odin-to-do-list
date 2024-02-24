@@ -4,6 +4,7 @@ class Task {
   static from(JSON) {
     // re-create task from saved JSON object (by reassigning prototypes?)
   }
+  
   constructor(name, desc, priority = 4, dueDateRaw) {
     this._created = new Date();
     this._priority = clampPriority(priority);

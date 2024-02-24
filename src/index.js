@@ -4,7 +4,6 @@ import updateTaskBoard from './DOM-modules/DOM-handler.js';
 import { getCurrentProject, getAllProjects } from './to-do-modules/task-tree.js';
 require('./style.css');
 
-// move parts into separate modules, just planning
 // fill taskBoard with saved JSON tasks
 const currentProject = getCurrentProject()
 currentProject.addTask(new Task('1', 'ddddddd', 3, "02-28"));
@@ -29,7 +28,6 @@ currentProject.addTask(new Task('7', 'ddddddd', 4, "2025-01-12"));
 // add event listeners to option buttons to sort currentProject.tasks
 updateTaskBoard();
 console.table(getAllProjects());
-// user create tasks
 // user edit tasks
 
 // allow user to select a project from a tree in a sidebar and/or from project card to set as current project

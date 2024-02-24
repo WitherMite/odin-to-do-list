@@ -36,7 +36,7 @@ function closeOtherDropdowns(dropdown) {
   }
 }
 
-function openProject(position) {
+function openTask(position) {
   let dropdowns = Array.from(document.querySelectorAll(
     '.task-board > .task > .collapsible'
   ));
@@ -59,4 +59,4 @@ function openProject(position) {
   }
 }
 
-export { updateTaskDropdowns, toggleDropdown, openProject };
+export { updateTaskDropdowns, openTask };

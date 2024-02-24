@@ -1,7 +1,7 @@
 import hideBtnImg from '../assets/close.svg';
 import updateTaskBoard from './DOM-handler.js';
+import updateProjectSelector from "./project-selector.js";
 import { set } from 'date-fns';
-import { updateProjectSelector } from "./project-selector.js";
 import { addTaskToTree } from '../to-do-modules/task-tree.js';
 
 const modal = document.querySelector('.new-task-modal');
@@ -10,7 +10,7 @@ const submitBtn = modal.querySelector('.submit-btn');
 
 hideBtn.querySelector('img').src = hideBtnImg;
 
-function showForm() {
+export default function showForm() {
   updateProjectSelector();
   modal.showModal();
   hideBtn.addEventListener('click', hideForm);
@@ -28,7 +28,8 @@ function submitForm(e) {
   if (!form.reportValidity()) return;
 
   const formValues = readForm(form);
-  const project = formValues.targetProject.split(',');
+  const project = formValues.targetProject.split(',')
+                                          .map(i => Number(i));
   addTaskToTree(formValues, project);
 
   hideForm();
@@ -60,5 +61,3 @@ function joinDateStr(date, time) {
   }
   return '';
 }
-
-export { showForm };

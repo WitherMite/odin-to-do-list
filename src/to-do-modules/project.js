@@ -2,9 +2,14 @@ import Task from "./task.js";
 
 class Project extends Task { // projects can be tasks - should be nestable
   static from(obj) {
-    // re-create project from saved JSON object or task with a tasks prop
-    // fixedProject._repairNested();
+    if (obj instanceof Task) {
+      // turn Tasks into Projects
+    } else {
+      const task = Task.from(obj); // repair JSON
+      if (task) Project.from(task);
+    }
   }
+  
   constructor(name, desc, priority, dueDateRaw, ...tasks) {
     super(name, desc, priority, dueDateRaw);
     this.tasks = tasks;
