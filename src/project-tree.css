@@ -9,8 +9,11 @@
 }
 
 .project-tree ul {
-    margin-top: 2px;
     margin-left: calc(var(--spacing) / 2 - 2px);
+}
+
+.project-tree > li > ul {
+    margin-left: calc(var(--spacing) - 2px);
 }
 
 .project-tree li {
