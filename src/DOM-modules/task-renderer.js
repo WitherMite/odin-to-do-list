@@ -36,6 +36,7 @@ function writeTaskToHtml(task, html, position) {
       task.dueDate,
       {addSuffix: true}
     );
+    html.dueDate.title = task.dueDate.toLocaleString();
   } else {
     html.dueDate.textContent = null;
   }
