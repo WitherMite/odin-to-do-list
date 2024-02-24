@@ -1,13 +1,12 @@
-import { getProjectList } from "../to-do-modules/project-list";
 const select = document.querySelector('#project-select');
 
 function updateProjectSelector() {
   clearSelector();
-  const projects = getProjectList();
-  projects.forEach((proj, index) => {
+  const projects = document.querySelectorAll('.tree-entry');
+  projects.forEach((proj) => {
     const opt = document.createElement('option');
-    opt.textContent = proj.name;
-    opt.value = index;
+    opt.textContent = proj.textContent;
+    opt.value = proj.dataset.tree;
     select.appendChild(opt);
   });
 }

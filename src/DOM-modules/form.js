@@ -2,7 +2,7 @@ import hideBtnImg from '../assets/close.svg';
 import { set } from 'date-fns';
 import { updateTaskBoard } from './DOM-handler.js';
 import { updateProjectSelector } from "./project-selector.js";
-import { addTaskToProject } from '../to-do-modules/project-list.js';
+import { addTaskToTree } from '../to-do-modules/task-tree.js';
 
 const modal = document.querySelector('.new-task-modal');
 const hideBtn = modal.querySelector('.close-modal-btn');
@@ -28,7 +28,8 @@ function submitForm(e) {
   if (!form.reportValidity()) return;
 
   const formValues = readForm(form);
-  addTaskToProject(formValues, formValues.targetProject);
+  const project = formValues.targetProject.split(',');
+  addTaskToTree(formValues, project);
 
   hideForm();
   form.reset();
