@@ -5,12 +5,13 @@ import { set } from 'date-fns';
 import { addTaskToTree } from '../to-do-modules/task-tree.js';
 
 const modal = document.querySelector('.new-task-modal');
+const form = modal.querySelector('form');
 const hideBtn = modal.querySelector('.close-modal-btn');
 const submitBtn = modal.querySelector('.submit-btn');
 
 hideBtn.querySelector('img').src = hideBtnImg;
 
-export default function showForm() {
+function showForm() {
   updateProjectSelector();
   modal.showModal();
   hideBtn.addEventListener('click', hideForm);
@@ -24,20 +25,21 @@ function hideForm() {
 
 function submitForm(e) {
   e.preventDefault();
-  const form = modal.querySelector('form');
   if (!form.reportValidity()) return;
 
-  const formValues = readForm(form);
-  const project = formValues.targetProject.split(',')
-                                          .map(i => Number(i));
-  addTaskToTree(formValues, project);
+  const formValues = readForm();
+  const projectPos = formValues.targetProject
+    ? formValues.targetProject.split(',').map(i => Number(i))
+    : [];
+  addTaskToTree(formValues, projectPos);
 
   hideForm();
   form.reset();
   updateTaskBoard();
+  submitBtn.removeEventListener('click', submitForm);
 }
 
-function readForm(form) {
+function readForm() {
   const date = form.querySelector('#date-due').value;
   const time = form.querySelector('#time-due').value;
   return {
@@ -61,3 +63,5 @@ function joinDateStr(date, time) {
   }
   return '';
 }
+
+export { showForm };

@@ -23,11 +23,17 @@ function removeTaskfromTree(taskPos) {
 
 function addTaskToTree(taskValues, projectPos) {
   const project = getTaskFromTree(projectPos);
-  const { asProj, name, description, priority, dueDate } = taskValues;
+  const { index, asProj, name, description, priority, dueDate } = taskValues;
   if (asProj) {
-    project.addTask(new Project(name, description, priority, dueDate));
+    project.addTask(
+      new Project(name, description, priority, dueDate),
+      index
+    );
   } else {
-    project.addTask(new Task(name, description, priority, dueDate));
+    project.addTask(
+      new Task(name, description, priority, dueDate),
+      index
+    );
   }
 }
 
@@ -53,5 +59,6 @@ export {
   setCurrentProject,
   removeTaskfromTree,
   addTaskToTree,
+  getTaskFromTree,
   getAllProjects
 };

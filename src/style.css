@@ -190,6 +190,10 @@ input[type='checkbox'] {
     width: 1.5rem;
 }
 
+input[type='range'] {
+    cursor: pointer;
+}
+
 textarea {
     resize: none;
 }

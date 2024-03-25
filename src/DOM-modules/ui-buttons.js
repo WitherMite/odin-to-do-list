@@ -1,5 +1,5 @@
 import updateTaskBoard from '../DOM-modules/DOM-handler.js';
-import showForm from './form.js';
+import { showForm } from './form.js';
 import { openTask } from '../DOM-modules/task-dropdowns.js'
 import { removeTaskfromTree } from '../to-do-modules/task-tree.js';
 
@@ -13,8 +13,8 @@ export default function updateUiButtons() {
 
 function deleteTask() {
   if (!confirm("Do you really want to delete this task?")) return;
-  const treePos = this.dataset.tree.split(',')
-                                   .map(i => Number(i));
+  const treePos = this.dataset.tree.split(',').map(i => Number(i));
+  
   removeTaskfromTree(treePos);
   updateTaskBoard();
   if (treePos.length > 1) {
