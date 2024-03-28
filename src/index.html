@@ -33,32 +33,66 @@
     <h1>Create New Task:</h1>
     <form action="">
       <div>
-        <label for="project-select">In:</label>
-        <select id="project-select">
-          <option>test</option>
-          <option>test2</option>
-        </select>
+        <label for="p-select">In:</label>
+        <select class="project-selector" id="p-select"></select>
       </div>
       <div>
         <label for="name">Task:</label>
-        <input type="text" id="name" required>
+        <input type="text" class="task-name" id="name" required>
       </div>
       <div>
         <label for="date-due">Due date:</label>
-        <input type="date" id="date-due">
-        <input type="time" id="time-due">
+        <input type="date" class="task-date" id="date-due">
+        <input type="time" class="task-time" id="time-due">
       </div>
       <div>
         <label for="desc">Description:</label>
-        <textarea id="desc" rows="5"></textarea>
+        <textarea class="task-desc" id="desc" rows="5"></textarea>
       </div>
       <div>
         <label for="pri">Priority:</label>
-        <input type="range" id="pri" min="1" max="7">
+        <input type="range" class="task-pri" id="pri" min="1" max="7">
       </div>
       <div>
         <label for="project-option">As project:</label>
-        <input type="checkbox" id="project-option">
+        <input type="checkbox" class="task-project" id="project-option">
+      </div>
+      <button class="submit-btn">Submit</button>
+    </form>
+  </dialog>
+
+  <dialog class="edit-task-modal">
+    <button class="close-modal-btn"><img class="close-modal-img" src="" alt=""></button>
+    <h1>Edit Task:</h1>
+    <form action="">
+      <div>
+        <label for="edit-name">Task:</label>
+        <input type="text" class="task-name" id="edit-name" required>
+      </div>
+      <div>
+        <label for="edit-date-due">Due date:</label>
+        <input type="date" class="task-date" id="edit-date-due">
+        <input type="time" class="task-time" id="edit-time-due">
+      </div>
+      <div>
+        <label for="edit-desc">Description:</label>
+        <textarea class="task-desc" id="edit-desc" rows="5"></textarea>
+      </div>
+      <div>
+        <label for="edit-pri">Priority:</label>
+        <input type="range" class="task-pri" id="edit-pri" min="1" max="7">
+      </div>
+      <div>
+        <label for="edit-project-option">As project:</label>
+        <input type="checkbox" class="task-project" id="edit-project-option">
+      </div>
+      <div>
+        <label for="move-task">Move task:</label>
+        <input type="checkbox" id="move-task">
+      </div>
+      <div>
+        <label for="edit-p-select">In:</label>
+        <select class="project-selector" id="edit-p-select"></select>
       </div>
       <button class="submit-btn">Submit</button>
     </form>

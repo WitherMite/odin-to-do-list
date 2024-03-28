@@ -1,5 +1,6 @@
 import updateTaskBoard from '../DOM-modules/DOM-handler.js';
-import { showForm } from './form.js';
+import showNewTaskForm from './new-task-form.js';
+import showEditForm from './edit-form.js';
 import { openTask } from '../DOM-modules/task-dropdowns.js'
 import { removeTaskfromTree } from '../to-do-modules/task-tree.js';
 
@@ -8,7 +9,10 @@ export default function updateUiButtons() {
   deleteBtns.forEach(btn => btn.addEventListener('click', deleteTask));
 
   const formBtns = document.querySelectorAll('.new-task-btn');
-  formBtns.forEach(btn => btn.addEventListener('click', showForm));
+  formBtns.forEach(btn => btn.addEventListener('click', showNewTaskForm));
+
+  const editBtns = document.querySelectorAll('.edit-btn');
+  editBtns.forEach(btn => btn.addEventListener('click', showEditForm));
 }
 
 function deleteTask() {

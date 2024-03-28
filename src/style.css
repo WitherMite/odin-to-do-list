@@ -96,10 +96,6 @@ select:hover  {
     text-decoration: underline solid var(--secondary-color) 2px;
 }
 
-.project-tree #selected {
-    color: var(--secondary-color);
-}
-
 main {
     background-color: var(--primary-color);
 }

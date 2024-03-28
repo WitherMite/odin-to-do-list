@@ -1,16 +1,22 @@
-const select = document.querySelector('#project-select');
+const selectors = document.querySelectorAll('.project-selector');
 
-export default function updateProjectSelector() {
-  clearSelector();
+export default function updateProjectSelectors() {
+  clearSelectors();
   const projects = document.querySelectorAll('.tree-entry');
   projects.forEach((proj) => {
     const opt = document.createElement('option');
     opt.textContent = proj.textContent;
     opt.value = proj.dataset.tree;
-    select.appendChild(opt);
+    selectors.forEach(sel => sel.appendChild(opt.cloneNode(true)));
   });
 }
 
-function clearSelector() {
-  while (select.firstChild) select.removeChild(select.firstChild);
+function clearSelectors() {
+  while (checkSelectorsHaveChild()) {
+    selectors.forEach(sel => sel.removeChild(sel.firstChild));
+  }
+}
+
+function checkSelectorsHaveChild() {
+  return Array.from(selectors).some(sel => sel.firstChild);
 }
