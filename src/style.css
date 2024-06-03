@@ -197,3 +197,7 @@ textarea {
 .submit-btn {
     align-self: flex-end;
 }
+
+.hidden {
+    display: none;
+}
