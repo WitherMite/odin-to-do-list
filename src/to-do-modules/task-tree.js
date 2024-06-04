@@ -37,6 +37,20 @@ function addTaskToTree(taskValues, projectPos) {
   }
 }
 
+// function editTaskInTree(taskValues, taskPos) {
+//   const task = getTaskFromTree(taskPos);
+//   if () {
+
+//   } else { 
+//     const { name, description, priority, dueDate } = taskValues;
+
+//     task.name = name;
+//     task.description = description;
+//     task.priority = priority;
+//     task.dueDate = dueDate;
+//   }
+// }
+
 function getTaskFromTree(taskPos) {
   let position = currentProject;
   taskPos.forEach(i => {

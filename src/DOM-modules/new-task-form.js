@@ -1,5 +1,6 @@
 import updateTaskBoard from './DOM-handler.js';
-import { showForm, sendToTaskTree } from './forms.js';
+import { addTaskToTree } from '../to-do-modules/task-tree.js';
+import { showForm, joinDateStr } from './forms.js';
 
 const modal = document.querySelector('.new-task-modal');
 const form = modal.querySelector('form');
@@ -16,11 +17,32 @@ function hideForm() {
   modal.close()
 }
 
+function sendToTaskTree() {
+  const formValues = readForm();
+  const projectPos = formValues.targetProject
+    ? formValues.targetProject.split(',').map(i => Number(i))
+    : [];
+  addTaskToTree(formValues, projectPos);
+}
+
+function readForm() {
+  const date = form.querySelector('.task-date').value;
+  const time = form.querySelector('.task-time').value;
+  return {
+    dueDate: joinDateStr(date, time),
+    targetProject: form.querySelector('.project-selector').value,
+    name: form.querySelector('.task-name').value,
+    description: form.querySelector('.task-desc').value,
+    priority: form.querySelector('.task-pri').value,
+    asProj: form.querySelector('.task-project').checked,
+  };
+}
+
 function submitForm(e) {
   e.preventDefault();
   if (!form.reportValidity()) return;
 
-  sendToTaskTree(form);
+  sendToTaskTree();
 
   modal.close();
   form.reset();
