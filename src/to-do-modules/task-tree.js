@@ -37,19 +37,21 @@ function addTaskToTree(taskValues, projectPos) {
   }
 }
 
-// function editTaskInTree(taskValues, taskPos) {
-//   const task = getTaskFromTree(taskPos);
-//   if () {
-
-//   } else { 
-//     const { name, description, priority, dueDate } = taskValues;
-
-//     task.name = name;
-//     task.description = description;
-//     task.priority = priority;
-//     task.dueDate = dueDate;
-//   }
-// }
+function editTaskInTree(taskValues, taskPos) {
+  const task = getTaskFromTree(taskPos);
+  const { name, description, priority, dueDate } = taskValues;
+  task.name = name;
+  task.description = description;
+  task.priority = priority;
+  task.dueDate = dueDate;
+  if (taskValues.isMove) {
+    const targetProject = taskValues.targetProject
+      ? taskValues.targetProject.split(',').map(i => Number(i))
+      : [];
+    addTaskToTree(taskValues, targetProject);
+    removeTaskfromTree(taskPos);
+  }
+}
 
 function getTaskFromTree(taskPos) {
   let position = currentProject;
@@ -73,6 +75,7 @@ export {
   setCurrentProject,
   removeTaskfromTree,
   addTaskToTree,
+  editTaskInTree,
   getTaskFromTree,
   getAllProjects
 };
