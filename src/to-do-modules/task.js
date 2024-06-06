@@ -1,8 +1,13 @@
 import { toDate } from 'date-fns'
 
 class Task {
-  static from(JSON) {
-    // re-create task from saved JSON object (by reassigning prototypes?)
+  static from(json) {
+    const task = (typeof json === 'object')
+      ? json
+      : JSON.parse(json);
+    Object.setPrototypeOf(task, Task.prototype);
+    task.dueDate = task._dueDate;
+    return task;
   }
   
   constructor(name, desc, priority = 4, dueDateRaw) {

@@ -3,11 +3,12 @@ import Task from "./task.js";
 class Project extends Task { // projects can be tasks - should be nestable
   static from(obj) {
     if (obj instanceof Task) {
-      // turn Tasks into Projects
-    } else {
-      const task = Task.from(obj); // repair JSON
-      if (task) Project.from(task);
+      Object.setPrototypeOf(obj, Project.prototype);
+      obj._repairNested();
+      return obj;
     }
+    const task = Task.from(obj);
+    if (task) return Project.from(task);
   }
   
   constructor(name, desc, priority, dueDateRaw, ...tasks) {
@@ -16,7 +17,13 @@ class Project extends Task { // projects can be tasks - should be nestable
   }
 
   _repairNested() {
-    // re-create all projects and tasks in this.tasks
+    this.tasks.forEach(task => {
+      if (task.tasks && !(task instanceof Project)) {
+        Project.from(task);
+      } else if (!(task instanceof Task)) {
+        Task.from(task);
+      }
+    })
   }
 
   // methods to sort tasks

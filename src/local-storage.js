@@ -9,6 +9,11 @@ function populateStorage() {
   console.log(localStorage.getItem('container-project'));
 }
 
+function getTreeFromStorage() {
+  return localStorage.getItem('container-project');
+}
+
 export {
   populateStorage,
+  getTreeFromStorage
 }

@@ -1,10 +1,14 @@
 import Task from "./task";
 import Project from "./project";
+import { getTreeFromStorage } from "../local-storage";
 
 const containerProject = createContainerProject();
 let currentProject = containerProject;
 
 function createContainerProject() {
+  const treeString = getTreeFromStorage();
+  if (treeString) return Project.from(treeString);
+
   return new Project('To-do List');
 }
 
@@ -26,7 +30,7 @@ function removeTaskfromTree(taskPos) {
   const parentPos = copyPos;
 
   const project = getTaskFromTree(parentPos);
-  project.removeTask(taskIndex);
+  return project.removeTask(taskIndex);
 }
 
 function addTaskToTree(taskValues, projectPos) {
@@ -52,12 +56,13 @@ function editTaskInTree(taskValues, taskPos) {
   task.description = description;
   task.priority = priority;
   task.dueDate = dueDate;
+  if (taskValues.asProj) Project.from(task);
   if (taskValues.isMove) {
-    const targetProject = taskValues.targetProject
+    const targetPos = taskValues.targetProject
       ? taskValues.targetProject.split(',').map(i => Number(i))
       : [];
-    addTaskToTree(taskValues, targetProject);
-    removeTaskfromTree(taskPos);
+    const targetProject = getTaskFromTree(targetPos);
+    targetProject.addTask(removeTaskfromTree(taskPos));
   }
 }
 
