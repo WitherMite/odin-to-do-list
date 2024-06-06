@@ -3,6 +3,7 @@ import renderTree from "./tree-renderer.js";
 import updateUiButtons from "./ui-buttons.js";
 import { getCurrentProject } from '../to-do-modules/task-tree.js';
 import { updateTaskDropdowns } from "./task-dropdowns.js";
+import { populateStorage } from "../local-storage.js";
 
 export default function updateTaskBoard() {
   const project = getCurrentProject();
@@ -10,4 +11,5 @@ export default function updateTaskBoard() {
   renderTree(project);
   updateTaskDropdowns();
   updateUiButtons();
+  populateStorage();
 }

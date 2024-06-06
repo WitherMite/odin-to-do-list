@@ -1,15 +1,23 @@
 import Task from "./task";
 import Project from "./project";
 
-const containerProject = new Project('To-do List');
+const containerProject = createContainerProject();
 let currentProject = containerProject;
 
+function createContainerProject() {
+  return new Project('To-do List');
+}
+
 function setCurrentProject(project) {
-  currentProject = project
+  if (project instanceof Project) currentProject = project;
 }
 
 function getCurrentProject() {
   return currentProject;
+}
+
+function getContainerProject() {
+  return containerProject;
 }
 
 function removeTaskfromTree(taskPos) {
@@ -73,6 +81,7 @@ function getAllProjects(project = currentProject) {
 export {
   getCurrentProject,
   setCurrentProject,
+  getContainerProject,
   removeTaskfromTree,
   addTaskToTree,
   editTaskInTree,
