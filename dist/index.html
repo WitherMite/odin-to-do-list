@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odin To-do List</title>
+<script defer src="main.js"></script></head>
+<body>
+  <nav class="toolbar">
+    <div class="title"></div>
+    <button>option</button>
+    <button>option</button>
+    <button>option</button>
+  </nav>
+
+  <div class="sidebar-container">
+    <div class="sidebar">
+      <h2>Projects</h2>
+      <ul class="project-tree">
+        
+      </ul>
+      <button class="new-task-btn">Add Task</button>
+    </div>
+  </div>
+  <main>
+    <div class="task-board">
+
+    </div>
+  </main>
+
+  <dialog class="new-task-modal">
+    <button class="close-modal-btn"><img class="close-modal-img" src="" alt=""></button>
+    <h1>Create New Task:</h1>
+    <form action="">
+      <div>
+        <label for="p-select">In:</label>
+        <select class="project-selector" id="p-select"></select>
+      </div>
+      <div>
+        <label for="name">Task:</label>
+        <input type="text" class="task-name" id="name" required>
+      </div>
+      <div>
+        <label for="date-due">Due date:</label>
+        <input type="date" class="task-date" id="date-due">
+        <input type="time" class="task-time" id="time-due">
+      </div>
+      <div>
+        <label for="desc">Description:</label>
+        <textarea class="task-desc" id="desc" rows="5"></textarea>
+      </div>
+      <div>
+        <label for="pri">Priority:</label>
+        <input type="range" class="task-pri" id="pri" min="1" max="7">
+      </div>
+      <div>
+        <label for="project-option">As project:</label>
+        <input type="checkbox" class="task-project" id="project-option">
+      </div>
+      <button class="submit-btn">Submit</button>
+    </form>
+  </dialog>
+
+  <dialog class="edit-task-modal">
+    <button class="close-modal-btn"><img class="close-modal-img" src="" alt=""></button>
+    <h1>Edit Task:</h1>
+    <form action="">
+      <input type="text" class="task-pos" hidden>
+      <div>
+        <label for="edit-name">Task:</label>
+        <input type="text" class="task-name" id="edit-name" required>
+      </div>
+      <div>
+        <label for="edit-date-due">Due date:</label>
+        <input type="date" class="task-date" id="edit-date-due">
+        <input type="time" class="task-time" id="edit-time-due">
+      </div>
+      <div>
+        <label for="edit-desc">Description:</label>
+        <textarea class="task-desc" id="edit-desc" rows="5"></textarea>
+      </div>
+      <div>
+        <label for="edit-pri">Priority:</label>
+        <input type="range" class="task-pri" id="edit-pri" min="1" max="7">
+      </div>
+      <div>
+        <label for="edit-project-option">As project:</label>
+        <input type="checkbox" class="task-project" id="edit-project-option">
+      </div>
+      <div>
+        <label for="move-task">Move task:</label>
+        <input type="checkbox" id="move-task">
+      </div>
+      <div class="edit-sel">
+        <label for="edit-p-select">To:</label>
+        <select class="project-selector" id="edit-p-select"></select>
+      </div>
+      <button class="submit-btn">Submit</button>
+    </form>
+  </dialog>
+
+  <template id="task-template">
+
+    <div class="task">
+      <div class="ctrl-btns">
+        <button class="edit-btn"><img class="edit-img" src="" alt=""></button>
+        <button class="delete-btn"><img class="delete-img" src="" alt=""></button>
+      </div>
+
+      <div class="min-task-info">
+        <h1 class="name"></h1>
+        <h3 class="due-date">Due: </h3>
+      </div>
+
+      <div class="collapsible">
+        <p class="description"></p>
+        <button class="dropdown-btn">
+          <img class="dropdown-img" src="" alt="">
+        </button>
+      </div>
+
+      <button class="dropdown-btn">
+        <img class="dropdown-img" src="" alt="">
+      </button>
+
+    </div>
+
+  </template>
+</body>
+</html>
