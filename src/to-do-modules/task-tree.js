@@ -74,14 +74,16 @@ function getTaskFromTree(taskPos) {
   return position ? position : currentProject;
 }
 
-function getAllProjects(project = currentProject) {
-  return project.tasks.reduce((acc, task) => {
-    if (task instanceof Project) {
-      acc = [...acc, ...getAllProjects(task)];
-    }
-    return acc;
-  }, [project]);
-}
+// Didn't end up needing this, but thought it was too cool to delete tbh
+
+// function getAllProjects(project = currentProject) {
+//   return project.tasks.reduce((acc, task) => {
+//     if (task instanceof Project) {
+//       acc = [...acc, ...getAllProjects(task)];
+//     }
+//     return acc;
+//   }, [project]);
+// }
 
 export {
   getCurrentProject,
@@ -90,6 +92,5 @@ export {
   removeTaskfromTree,
   addTaskToTree,
   editTaskInTree,
-  getTaskFromTree,
-  getAllProjects
+  getTaskFromTree
 };

@@ -5,8 +5,6 @@ function populateStorage() {
     'container-project', 
     JSON.stringify(getContainerProject())
   );
-
-  console.log(localStorage.getItem('container-project'));
 }
 
 function getTreeFromStorage() {

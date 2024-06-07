@@ -1,9 +1,10 @@
 import Task from "./task.js";
 
-class Project extends Task { // projects can be tasks - should be nestable
+class Project extends Task {
   static from(obj) {
     if (obj instanceof Task) {
       Object.setPrototypeOf(obj, Project.prototype);
+      if (!obj.tasks) obj.tasks = [];
       obj._repairNested();
       return obj;
     }
@@ -13,7 +14,7 @@ class Project extends Task { // projects can be tasks - should be nestable
   
   constructor(name, desc, priority, dueDateRaw, ...tasks) {
     super(name, desc, priority, dueDateRaw);
-    this.tasks = tasks;
+    this.tasks = tasks ? tasks : [];
   }
 
   _repairNested() {
